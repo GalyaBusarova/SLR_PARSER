@@ -163,29 +163,32 @@ A → α • β
 
 ## Структура проекта
 
-SLR-parser/ 
-├── src/ # Исходные файлы │ 
-├── main.cpp # Главная функция │ 
-├── parser.cpp # Алгоритм парсинга │ 
-├── lr0.cpp # LR(0) автомат │ 
-├── action_table.cpp # Таблица ACTION │ 
-├── goto_table.cpp # Таблица GOTO │ 
-├── follow.cpp # Множества следования │ 
-├── token.cpp # Работа с токенами │ 
-├── lexer.cpp # Обёртка лексера │ 
-└── lexer.l # Правила лексера Flex 
-├── include/ # Заголовочные файлы │ 
-├── grammar.h # Грамматика языка │ 
-├── lr0.h # LR(0) структуры │ 
-├── table.h # Таблицы разбора │ 
-├── follow.h # Множества следования │ 
-├── token.h # Токены │ 
-├── token_types.h # Перечисление токенов 
-│ └── parser.h # Интерфейс парсера 
-├── scripts/ # Вспомогательные скрипты │ 
-└── build.sh # Скрипт сборки 
-├── docs/ # Документация │ 
-└── GRAMMAR.md # Описание грамматики 
-├── CMakeLists.txt # Файл сборки CMake 
-└── README.md # Этот файл
-
+SLR-parser/
+├── src/                      # Исходные файлы
+│   ├── main.cpp              # Главная функция
+│   ├── parser.cpp            # Алгоритм парсинга
+│   ├── lr0.cpp               # Построение LR(0) автомата
+│   ├── action_table.cpp      # Таблица ACTION
+│   ├── goto_table.cpp        # Таблица GOTO
+│   ├── follow.cpp            # Множества FOLLOW
+│   ├── token.cpp             # Преобразование токенов
+│   ├── lexer.cpp             # Обёртка лексера
+│   └── lexer.l               # Правила лексера (Flex)
+│
+├── include/                   # Заголовочные файлы
+│   ├── grammar.h              # Арифметическая грамматика
+│   ├── lr0.h                  # LR(0)-элементы и состояния
+│   ├── table.h                # Таблицы ACTION и GOTO
+│   ├── follow.h               # Множества FOLLOW
+│   ├── token.h                # Токены и tokenToString
+│   ├── token_types.h          # Перечисление терминалов
+│   └── parser.h               # Интерфейс парсера
+│
+├── scripts/                   # Вспомогательные скрипты
+│   └── build.sh               # Скрипт сборки
+│
+├── docs/                      # Документация
+│   └── GRAMMAR.md             # Описание грамматики
+│
+├── CMakeLists.txt             # Конфигурация CMake
+└── README.md                  # Этот файл
