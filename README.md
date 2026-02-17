@@ -188,3 +188,47 @@ SLR-parser/
 ├── CMakeLists.txt             # Конфигурация CMake
 └── README.md                  # Этот файл
 ```
+
+## Требования
+CMake 3.10 или выше
+C++17 компилятор (g++, clang++)
+Flex (Fast Lexical Analyzer Generator)
+
+## Сборка
+
+``` bash
+# Создаём директорию сборки
+mkdir build && cd build
+
+# Генерируем файлы сборки
+cmake ..
+
+# Собираем проект
+make
+
+```
+
+## Использование
+### Запуск
+``` bash
+./slr_parser
+```
+
+### Ввод выражения
+После запуска программа запросит ввод:
+```
+Enter arithmetic expression (e.g., a+b*c): 
+```
+
+### Формат вывода 
+Программа выводит таблицу шагов разбора:
+STACK   INPUT   ACTION
+$       ID+ID$  Shift 4
+$ID     +ID$    Reduce F->ID
+$F      +ID$    Reduce T->F
+$T      +ID$    Reduce E->T
+$E      +ID$    Shift 8
+где:
+- STACK - текущее состояние стека символов
+- INPUT — оставшийся входной поток
+- ACTION — выполняемое действие
