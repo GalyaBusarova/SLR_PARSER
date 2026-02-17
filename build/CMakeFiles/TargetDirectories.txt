@@ -1,0 +1,3 @@
+/Users/busarovagalina/SLR-parser/SLR_PARSER/build/CMakeFiles/slr_parser.dir
+/Users/busarovagalina/SLR-parser/SLR_PARSER/build/CMakeFiles/edit_cache.dir
+/Users/busarovagalina/SLR-parser/SLR_PARSER/build/CMakeFiles/rebuild_cache.dir

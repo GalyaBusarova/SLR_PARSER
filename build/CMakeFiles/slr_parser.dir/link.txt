@@ -1,0 +1,1 @@
+/usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/slr_parser.dir/src/main.cpp.o CMakeFiles/slr_parser.dir/src/lr0.cpp.o CMakeFiles/slr_parser.dir/src/follow.cpp.o CMakeFiles/slr_parser.dir/src/token.cpp.o CMakeFiles/slr_parser.dir/src/lexer.cpp.o CMakeFiles/slr_parser.dir/src/slr.cpp.o CMakeFiles/slr_parser.dir/lex.yy.c.o -o slr_parser
