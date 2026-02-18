@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named slr_lib
+
+# Build rule for target.
+slr_lib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 slr_lib
+.PHONY : slr_lib
+
+# fast build rule for target.
+slr_lib/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_lib.dir/build.make CMakeFiles/slr_lib.dir/build
+.PHONY : slr_lib/fast
+
+#=============================================================================
 # Target rules for targets named slr_parser
 
 # Build rule for target.
@@ -129,12 +142,25 @@ slr_parser/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_parser.dir/build.make CMakeFiles/slr_parser.dir/build
 .PHONY : slr_parser/fast
 
+#=============================================================================
+# Target rules for targets named run_tests
+
+# Build rule for target.
+run_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 run_tests
+.PHONY : run_tests
+
+# fast build rule for target.
+run_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/build
+.PHONY : run_tests/fast
+
 lex.yy.o: lex.yy.c.o
 .PHONY : lex.yy.o
 
 # target to build an object file
 lex.yy.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_parser.dir/build.make CMakeFiles/slr_parser.dir/lex.yy.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_lib.dir/build.make CMakeFiles/slr_lib.dir/lex.yy.c.o
 .PHONY : lex.yy.c.o
 
 lex.yy.i: lex.yy.c.i
@@ -142,7 +168,7 @@ lex.yy.i: lex.yy.c.i
 
 # target to preprocess a source file
 lex.yy.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_parser.dir/build.make CMakeFiles/slr_parser.dir/lex.yy.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_lib.dir/build.make CMakeFiles/slr_lib.dir/lex.yy.c.i
 .PHONY : lex.yy.c.i
 
 lex.yy.s: lex.yy.c.s
@@ -150,7 +176,7 @@ lex.yy.s: lex.yy.c.s
 
 # target to generate assembly for a file
 lex.yy.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_parser.dir/build.make CMakeFiles/slr_parser.dir/lex.yy.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_lib.dir/build.make CMakeFiles/slr_lib.dir/lex.yy.c.s
 .PHONY : lex.yy.c.s
 
 src/follow.o: src/follow.cpp.o
@@ -158,7 +184,7 @@ src/follow.o: src/follow.cpp.o
 
 # target to build an object file
 src/follow.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_parser.dir/build.make CMakeFiles/slr_parser.dir/src/follow.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_lib.dir/build.make CMakeFiles/slr_lib.dir/src/follow.cpp.o
 .PHONY : src/follow.cpp.o
 
 src/follow.i: src/follow.cpp.i
@@ -166,7 +192,7 @@ src/follow.i: src/follow.cpp.i
 
 # target to preprocess a source file
 src/follow.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_parser.dir/build.make CMakeFiles/slr_parser.dir/src/follow.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_lib.dir/build.make CMakeFiles/slr_lib.dir/src/follow.cpp.i
 .PHONY : src/follow.cpp.i
 
 src/follow.s: src/follow.cpp.s
@@ -174,7 +200,7 @@ src/follow.s: src/follow.cpp.s
 
 # target to generate assembly for a file
 src/follow.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_parser.dir/build.make CMakeFiles/slr_parser.dir/src/follow.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_lib.dir/build.make CMakeFiles/slr_lib.dir/src/follow.cpp.s
 .PHONY : src/follow.cpp.s
 
 src/lexer.o: src/lexer.cpp.o
@@ -182,7 +208,7 @@ src/lexer.o: src/lexer.cpp.o
 
 # target to build an object file
 src/lexer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_parser.dir/build.make CMakeFiles/slr_parser.dir/src/lexer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_lib.dir/build.make CMakeFiles/slr_lib.dir/src/lexer.cpp.o
 .PHONY : src/lexer.cpp.o
 
 src/lexer.i: src/lexer.cpp.i
@@ -190,7 +216,7 @@ src/lexer.i: src/lexer.cpp.i
 
 # target to preprocess a source file
 src/lexer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_parser.dir/build.make CMakeFiles/slr_parser.dir/src/lexer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_lib.dir/build.make CMakeFiles/slr_lib.dir/src/lexer.cpp.i
 .PHONY : src/lexer.cpp.i
 
 src/lexer.s: src/lexer.cpp.s
@@ -198,7 +224,7 @@ src/lexer.s: src/lexer.cpp.s
 
 # target to generate assembly for a file
 src/lexer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_parser.dir/build.make CMakeFiles/slr_parser.dir/src/lexer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_lib.dir/build.make CMakeFiles/slr_lib.dir/src/lexer.cpp.s
 .PHONY : src/lexer.cpp.s
 
 src/lr0.o: src/lr0.cpp.o
@@ -206,7 +232,7 @@ src/lr0.o: src/lr0.cpp.o
 
 # target to build an object file
 src/lr0.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_parser.dir/build.make CMakeFiles/slr_parser.dir/src/lr0.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_lib.dir/build.make CMakeFiles/slr_lib.dir/src/lr0.cpp.o
 .PHONY : src/lr0.cpp.o
 
 src/lr0.i: src/lr0.cpp.i
@@ -214,7 +240,7 @@ src/lr0.i: src/lr0.cpp.i
 
 # target to preprocess a source file
 src/lr0.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_parser.dir/build.make CMakeFiles/slr_parser.dir/src/lr0.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_lib.dir/build.make CMakeFiles/slr_lib.dir/src/lr0.cpp.i
 .PHONY : src/lr0.cpp.i
 
 src/lr0.s: src/lr0.cpp.s
@@ -222,7 +248,7 @@ src/lr0.s: src/lr0.cpp.s
 
 # target to generate assembly for a file
 src/lr0.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_parser.dir/build.make CMakeFiles/slr_parser.dir/src/lr0.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_lib.dir/build.make CMakeFiles/slr_lib.dir/src/lr0.cpp.s
 .PHONY : src/lr0.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -249,12 +275,36 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_parser.dir/build.make CMakeFiles/slr_parser.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/parser.o: src/parser.cpp.o
+.PHONY : src/parser.o
+
+# target to build an object file
+src/parser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_lib.dir/build.make CMakeFiles/slr_lib.dir/src/parser.cpp.o
+.PHONY : src/parser.cpp.o
+
+src/parser.i: src/parser.cpp.i
+.PHONY : src/parser.i
+
+# target to preprocess a source file
+src/parser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_lib.dir/build.make CMakeFiles/slr_lib.dir/src/parser.cpp.i
+.PHONY : src/parser.cpp.i
+
+src/parser.s: src/parser.cpp.s
+.PHONY : src/parser.s
+
+# target to generate assembly for a file
+src/parser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_lib.dir/build.make CMakeFiles/slr_lib.dir/src/parser.cpp.s
+.PHONY : src/parser.cpp.s
+
 src/slr.o: src/slr.cpp.o
 .PHONY : src/slr.o
 
 # target to build an object file
 src/slr.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_parser.dir/build.make CMakeFiles/slr_parser.dir/src/slr.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_lib.dir/build.make CMakeFiles/slr_lib.dir/src/slr.cpp.o
 .PHONY : src/slr.cpp.o
 
 src/slr.i: src/slr.cpp.i
@@ -262,7 +312,7 @@ src/slr.i: src/slr.cpp.i
 
 # target to preprocess a source file
 src/slr.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_parser.dir/build.make CMakeFiles/slr_parser.dir/src/slr.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_lib.dir/build.make CMakeFiles/slr_lib.dir/src/slr.cpp.i
 .PHONY : src/slr.cpp.i
 
 src/slr.s: src/slr.cpp.s
@@ -270,7 +320,7 @@ src/slr.s: src/slr.cpp.s
 
 # target to generate assembly for a file
 src/slr.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_parser.dir/build.make CMakeFiles/slr_parser.dir/src/slr.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_lib.dir/build.make CMakeFiles/slr_lib.dir/src/slr.cpp.s
 .PHONY : src/slr.cpp.s
 
 src/token.o: src/token.cpp.o
@@ -278,7 +328,7 @@ src/token.o: src/token.cpp.o
 
 # target to build an object file
 src/token.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_parser.dir/build.make CMakeFiles/slr_parser.dir/src/token.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_lib.dir/build.make CMakeFiles/slr_lib.dir/src/token.cpp.o
 .PHONY : src/token.cpp.o
 
 src/token.i: src/token.cpp.i
@@ -286,7 +336,7 @@ src/token.i: src/token.cpp.i
 
 # target to preprocess a source file
 src/token.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_parser.dir/build.make CMakeFiles/slr_parser.dir/src/token.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_lib.dir/build.make CMakeFiles/slr_lib.dir/src/token.cpp.i
 .PHONY : src/token.cpp.i
 
 src/token.s: src/token.cpp.s
@@ -294,8 +344,32 @@ src/token.s: src/token.cpp.s
 
 # target to generate assembly for a file
 src/token.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_parser.dir/build.make CMakeFiles/slr_parser.dir/src/token.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/slr_lib.dir/build.make CMakeFiles/slr_lib.dir/src/token.cpp.s
 .PHONY : src/token.cpp.s
+
+tests/test_parser.o: tests/test_parser.cpp.o
+.PHONY : tests/test_parser.o
+
+# target to build an object file
+tests/test_parser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/test_parser.cpp.o
+.PHONY : tests/test_parser.cpp.o
+
+tests/test_parser.i: tests/test_parser.cpp.i
+.PHONY : tests/test_parser.i
+
+# target to preprocess a source file
+tests/test_parser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/test_parser.cpp.i
+.PHONY : tests/test_parser.cpp.i
+
+tests/test_parser.s: tests/test_parser.cpp.s
+.PHONY : tests/test_parser.s
+
+# target to generate assembly for a file
+tests/test_parser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/test_parser.cpp.s
+.PHONY : tests/test_parser.cpp.s
 
 # Help Target
 help:
@@ -305,6 +379,8 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... run_tests"
+	@echo "... slr_lib"
 	@echo "... slr_parser"
 	@echo "... lex.yy.o"
 	@echo "... lex.yy.i"
@@ -321,12 +397,18 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/parser.o"
+	@echo "... src/parser.i"
+	@echo "... src/parser.s"
 	@echo "... src/slr.o"
 	@echo "... src/slr.i"
 	@echo "... src/slr.s"
 	@echo "... src/token.o"
 	@echo "... src/token.i"
 	@echo "... src/token.s"
+	@echo "... tests/test_parser.o"
+	@echo "... tests/test_parser.i"
+	@echo "... tests/test_parser.s"
 .PHONY : help
 
 

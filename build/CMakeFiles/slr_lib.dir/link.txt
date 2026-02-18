@@ -1,0 +1,2 @@
+/usr/bin/ar qc libslr_lib.a CMakeFiles/slr_lib.dir/src/parser.cpp.o CMakeFiles/slr_lib.dir/src/lr0.cpp.o CMakeFiles/slr_lib.dir/src/follow.cpp.o CMakeFiles/slr_lib.dir/src/token.cpp.o CMakeFiles/slr_lib.dir/src/lexer.cpp.o CMakeFiles/slr_lib.dir/src/slr.cpp.o CMakeFiles/slr_lib.dir/lex.yy.c.o
+/usr/bin/ranlib libslr_lib.a

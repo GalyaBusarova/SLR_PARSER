@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/busarovagalina/SLR-parser/SLR_PARSER/src/main.cpp" "CMakeFiles/slr_parser.dir/src/main.cpp.o" "gcc" "CMakeFiles/slr_parser.dir/src/main.cpp.o.d"
+  "/Users/busarovagalina/SLR-parser/SLR_PARSER/tests/test_parser.cpp" "CMakeFiles/run_tests.dir/tests/test_parser.cpp.o" "gcc" "CMakeFiles/run_tests.dir/tests/test_parser.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

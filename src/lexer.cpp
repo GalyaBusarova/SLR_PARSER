@@ -5,6 +5,7 @@
 #include <iostream>
 
 #include "lexer.h"
+#include "token_types.h"
 
 // эти функции сгенерирует Flex
 extern "C" {
@@ -13,22 +14,21 @@ extern "C" {
     void yy_delete_buffer(void*);
 }
 
-// функция, которая нашу входную строку a + b * c переводит в поток токенов TOK_ID, TOK_PLUS, TOK_ID, TOK_MUL, TOK_ID, TOK_END
-std::vector<TokenId> tokenize(const std::string& input) 
-{
-    std::vector<TokenId> tokens;
 
+
+std::vector<TokenId> tokenize(const std::string& input) {
+    std::vector<TokenId> tokens;
     yy_scan_string(input.c_str());
     
     int token;
-    while ((token = yylex()) != 0) 
-    { 
-        if (token == TOK_ERROR) 
-        {
-            throw std::runtime_error("Lexical error: invalid character in input");
+    while ((token = yylex()) != 0) {  
+        if (token == 9) {  // TOK_ERROR
+            throw std::runtime_error("Lexical error: invalid character");
         }
 
-        tokens.push_back(static_cast<TokenId>(token));
+        // Лексер: 1→8, Парсер: 0→7
+        TokenId tok_id = static_cast<TokenId>(token - 1);
+        tokens.push_back(tok_id);
     }
     
     tokens.push_back(TOK_END);
